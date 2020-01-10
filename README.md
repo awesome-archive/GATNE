@@ -10,10 +10,8 @@ Accepted to KDD 2019 Research Track!
 
 ## Prerequisites
 
-- Linux or macOS
 - Python 3
-- TensorFlow >= 1.8
-- NVIDIA GPU + CUDA cuDNN
+- TensorFlow >= 1.8 (or PyTorch)
 
 ## Getting Started
 
@@ -41,14 +39,11 @@ These datasets are sampled from the original datasets.
 - YouTube contains 2,000 nodes and 1,310,617 edges. [Source](http://socialcomputing.asu.edu/datasets/YouTube)
 - Alibaba contains 6,163 nodes and 17,865 edges.
 
-You can download the preprocessed datasets by running `python scripts/download_preprocessed_data.py`. (Alibaba dataset is to be released.)
-If you're in regions where Dropbox are blocked (e.g. Mainland China), try `python scripts/download_preprocessed_data.py --cn`.
-
 ### Training
 
 #### Training on the existing datasets
 
-You can use `./scripts/run_example.sh` or `python src/main.py --input example_data` to train GATNE-T model on the example data. (If you share the server with others or you want to use the specific GPU(s), you may need to set `CUDA_VISIBLE_DEVICES`.) 
+You can use `./scripts/run_example.sh` or `python src/main.py --input data/example` or `python src/main_pytorch.py --input data/example` to train GATNE-T model on the example data. (If you share the server with others or you want to use the specific GPU(s), you may need to set `CUDA_VISIBLE_DEVICES`.) 
 
 If you want to train on the Amazon dataset, you can run `python src/main.py --input data/amazon` or `python src/main.py --input data/amazon --features data/amazon/feature.txt` to train GATNE-T model or GATNE-I model, respectively. 
 
@@ -75,10 +70,12 @@ If you have ANY difficulties to get things working in the above steps, feel free
 Please cite our paper if you find this code useful for your research:
 
 ```
-@article{cen2019representation,
-  title={Representation Learning for Attributed Multiplex Heterogeneous Network},
-  author={Cen, Yukuo and Zou, Xu and Zhang, Jianwei and Yang, Hongxia and Zhou, Jingren and Tang, Jie},
-  journal={arXiv preprint arXiv:1905.01669},
-  year={2019}
+@inproceedings{cen2019representation,
+  title = {Representation Learning for Attributed Multiplex Heterogeneous Network},
+  author = {Cen, Yukuo and Zou, Xu and Zhang, Jianwei and Yang, Hongxia and Zhou, Jingren and Tang, Jie},
+  booktitle = {Proceedings of the 25th ACM SIGKDD International Conference on Knowledge Discovery and Data Mining},
+  year = {2019},
+  pages = {1358--1368},
+  publisher = {ACM},
 }
 ```
